@@ -6,7 +6,6 @@ export default function Employeeapi(){
          .then(response=>{
           if(!response.ok){
            throw new Error("failed to fetch data") ;
-
           }
           return response.json();
          })
@@ -14,7 +13,13 @@ export default function Employeeapi(){
           setEmployeeData(data);
         console.log(data);
          })
-         .catch(error => console.log("failed to fetch data",error));
+         .catch(error =>{
+             console.log("failed to fetch data",error);
+             alert("failed to fetch data");
+         }
+
+        );
+         
   }
   useEffect(()=>{
     fetchEmployeeDetails();
